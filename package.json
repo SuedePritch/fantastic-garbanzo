@@ -1,0 +1,25 @@
+{
+  "name": "fantastic-garbanzo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuedePritch/fantastic-garbanzo.git"
+  },
+  "author": "James Pritchard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuedePritch/fantastic-garbanzo/issues"
+  },
+  "homepage": "https://github.com/SuedePritch/fantastic-garbanzo#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.4",
+    "mysql2": "^2.3.3"
+  }
+}
