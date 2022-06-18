@@ -21,4 +21,8 @@ viewAllDepartments = () =>{
     });
 }
 
-module.exports = viewAllEmployees, viewAllRoles, viewAllDepartments
+module.exports = {
+    viewAllEmployees, 
+    viewAllRoles, 
+    viewAllDepartments
+}

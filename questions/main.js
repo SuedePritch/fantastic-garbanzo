@@ -1,15 +1,15 @@
 const inquirer = require('inquirer')
-viewAllDepartments = require('../db/viewAllQueries')
-viewAllEmployees = require('../db/viewAllQueries')
-viewAllRoles = require('../db/viewAllQueries')
+const viewAll = require('../db/viewAllQueries')
 addEmployee = require('./addemployee')
+addRole = require('./addRole')
+addDepartment = require('./addDepartment')
 
 mainMenu = () => {
     inquirer.prompt([
     {
         type: "list",
         name: 'mainmenu',
-        message: 'Main Menu\n',
+        message: 'Main Menu',
         choices:[
             'View All Employees', 
             'Add Employee', 
@@ -28,11 +28,11 @@ mainMenu = () => {
 mainMenuActions= (answers)=>{
     //View All Options
     if(answers.mainmenu === 'View All Employees'){
-        viewAllEmployees();
+        viewAll.viewAllEmployees();
     }else if(answers.mainmenu === 'View All Roles'){
-        viewAllRoles();
+        viewAll.viewAllRoles();
     }else if(answers.mainmenu === 'View All Departments'){
-        viewAllDepartments();
+        viewAll.viewAllDepartments();
 
     //Add Options
     }else if(answers.mainmenu === 'Add Employee'){
