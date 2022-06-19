@@ -39,39 +39,29 @@ updateEmployeeRole = () =>{
         },
         ]
         ).then(answers =>{
-            let nameArrayOfChosen = answers.employeeName.split(' ')
-            console.log(nameArrayOfChosen[0], nameArrayOfChosen[1]);
-            db.execute(`
-            SELECT * FROM employee WHERE first_name= '${nameArrayOfChosen[0]}' AND last_name= '${nameArrayOfChosen[1]}';
-            `, function (err, results) {
-                if(err){
-                    console.log(err);
-                }else{    
-                    inquirer.prompt([
-                        {
-                            type: "list",
-                            name: 'employeeRole',
-                            message: 'Choose Employee\'s New Role',
-                            choices: rolesChoicesArray
-                        }
-                        ]).then(answers =>{
-                            let roleChosen = answers.employeeRole.split(' ')
-                            let roleIdChosen = roleChosen[0]
-                            let roleTitleChosen = roleChosen.slice(1);
-                            db.execute(`
-                            UPDATE employee SET role_id= '${roleIdChosen}' WHERE first_name= '${nameArrayOfChosen[0]}' AND last_name= '${nameArrayOfChosen[1]}';
-                            `, function (err, results) {
-                                if(err){
-                                    console.log(err);
-                                }else{
-                                    console.log(nameArrayOfChosen[0], nameArrayOfChosen[1] + '\'s role has been updated to ' + roleTitleChosen.join(' '));    
-                                    mainMenu();
-                                }
-                            })
-                })
+            let nameArrayOfChosen = answers.employeeName.split(' ') 
+            inquirer.prompt([
+                {
+                    type: "list",
+                    name: 'employeeRole',
+                    message: 'Choose Employee\'s New Role',
+                    choices: rolesChoicesArray
                 }
-            })
-})
-}
+                ]).then(answers =>{
+                    let roleChosen = answers.employeeRole.split(' ')
+                    let roleIdChosen = roleChosen[0]
+                    let roleTitleChosen = roleChosen.slice(1);
+                    db.execute(`
+                    UPDATE employee SET role_id= '${roleIdChosen}' WHERE first_name= '${nameArrayOfChosen[0]}' AND last_name= '${nameArrayOfChosen[1]}';
+                    `, function (err, results) {
+                        if(err){
+                            console.log(err);
+                        }else{
+                            console.log(nameArrayOfChosen[0], nameArrayOfChosen[1] + '\'s role has been updated to ' + roleTitleChosen.join(' '));    
+                        }
+                        mainMenu();
+                    })
+        })
+})}
 
 module.exports = updateEmployeeRole
