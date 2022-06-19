@@ -8,19 +8,20 @@ updateEmployeeRole = require('./updateEmployee')
 
 mainMenu = () => {
     getAll.getAllEmployees()
+    getAll.getAllRoles();
     inquirer.prompt([
     {
         type: "list",
         name: 'mainmenu',
         message: 'Main Menu',
         choices:[
-            // 'View All Employees', 
-            // 'Add Employee', 
-            'Update Employee',
-            // 'View All Roles',
-            // 'Add Role',
-            // 'View All Departments',
-            // 'Add Department'
+            'View All Employees', 
+            'Add Employee', 
+            'Update Employee Role',
+            'View All Roles',
+            'Add Role',
+            'View All Departments',
+            'Add Department'
         ]
     }
     ]
@@ -46,7 +47,7 @@ mainMenuActions= (answers)=>{
         addDepartment();
 
     //Update Options
-    }else if(answers.mainmenu === 'Update Employee'){
+    }else if(answers.mainmenu === 'Update Employee Role'){
         updateEmployeeRole();
     }
 }
