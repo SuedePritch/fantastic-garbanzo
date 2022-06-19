@@ -120,5 +120,9 @@ updateEmployeeManager = () =>{
 
 module.exports = {
     updateEmployeeRole,
-    updateEmployeeManager
+    updateEmployeeManager,
+    generateChoicesRoles,
+    rolesChoicesArray,
+    generateChoicesManager,
+    managerChoicesArray
 }

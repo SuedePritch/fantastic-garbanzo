@@ -1,7 +1,16 @@
 const inquirer = require('inquirer');
 const db = require('../server')
+const {
+    generateChoicesRoles, 
+    rolesChoicesArray,
+    generateChoicesManager,
+    managerChoicesArray
+
+} = require('./updateEmployee')
 
 addEmployee = () =>{
+    generateChoicesRoles();
+    generateChoicesManager();
     inquirer.prompt([
         {
             type: "input",
@@ -17,20 +26,24 @@ addEmployee = () =>{
             type: "list",
             name: 'role_id',
             message: 'Employee Role',
-            choices:[1,2,3,4]
+            choices:rolesChoicesArray
         },
         {
             type: "list",
             name: 'manager_id',
             message: `Employee's Manager`,
-            choices:[1,2,3,4]
+            choices: managerChoicesArray
         },
         ]
         ).then(answers =>{
+            let roleChosen = answers.role_id.split(' ')
+            let roleIdChosen = roleChosen[0]
+            let managerChosen = answers.manager_id.split(' ')
+            let managerIdChosen = managerChosen[0]
             db.execute(`
             INSERT INTO employee (first_name,last_name,role_id, manager_id)
             VALUES
-                ('${answers.first_name}', '${answers.last_name}', '${answers.role_id}', '${answers.manager_id}')
+                ('${answers.first_name}', '${answers.last_name}', '${roleIdChosen}', '${managerIdChosen}')
             `, function (err, results) {
                 if(err){
                     console.log(err);

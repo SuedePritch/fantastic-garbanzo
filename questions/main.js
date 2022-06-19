@@ -1,7 +1,10 @@
 const inquirer = require('inquirer')
 const viewAll = require('../db/viewAllQueries')
 const getAll = require('../db/getAllQueries')
-const { updateEmployeeManager, updateEmployeeRole } = require('./updateEmployee')
+const { 
+    updateEmployeeManager, 
+    updateEmployeeRole 
+} = require('./updateEmployee')
 
 addEmployee = require('./addEmployee')
 addRole = require('./addRole')
