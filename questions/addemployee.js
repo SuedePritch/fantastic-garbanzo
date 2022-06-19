@@ -5,8 +5,7 @@ const {
     rolesChoicesArray,
     generateChoicesManager,
     managerChoicesArray
-
-} = require('./updateEmployee')
+} = require('./choiceGenerator')
 
 addEmployee = () =>{
     generateChoicesRoles();

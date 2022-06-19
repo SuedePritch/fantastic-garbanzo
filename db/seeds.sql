@@ -46,14 +46,3 @@ VALUES
     
 
 
--- this will end up in server
-SELECT 
-    employee.first_name,
-    employee.last_name,
-    role.title,
-    role.salary,
-    role.department_id
-FROM employee
-LEFT JOIN role
-ON employee.role_id = role.id
-ORDER BY role.salary
