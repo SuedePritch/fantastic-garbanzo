@@ -1,5 +1,4 @@
 const db = require('../server')
-
 //Database queries
 //View All Options
 viewAllEmployees = () =>{
@@ -22,7 +21,7 @@ viewAllDepartments = () =>{
 }
 
 module.exports = {
-    viewAllEmployees, 
-    viewAllRoles, 
+    viewAllEmployees,
+    viewAllRoles,
     viewAllDepartments
 }
