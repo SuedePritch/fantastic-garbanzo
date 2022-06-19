@@ -28,21 +28,21 @@ VALUES
     
 INSERT INTO employee (first_name,last_name,role_id, manager_id)
 VALUES 
-    ('James','Pritchard', 1, 1),
-    ('Sarah','Johnston', 2, 1),
-    ('Doug','Chillian', 3, 1),
-    ('Mike','Harris', 4, 1),
-    ('Sally','Richmond', 6, 1),
-    ('Martha','Jones', 5, 1),
-    ('Jim','Taylor', 13, 1),
-    ('Walt','Williams', 8, 1),
-    ('Matt','Crocker', 11, 1),
-    ('Joe','Wong', 9, 1),
-    ('Jamie','Rodriguez', 6, 1),
-    ('Frank','Smith', 10, 1),
-    ('Julia','Anderson', 11, 1),
-    ('George','Lawrence', 7, 1),
-    ('Sam','Palmerson', 14, 1);
+    ('James',       'Pritchard',     1, NULL),
+    ('Sarah',       'Johnston',      2, NULL),
+    ('Doug',        'Chillian',      3, NULL),
+    ('Mike',        'Harris',        4, NULL),
+    ('Sally',       'Richmond',      6, NULL),
+    ('Martha',      'Jones',         5, 1),
+    ('Jim',         'Taylor',       13, 1),
+    ('Walt',        'Williams',      8, NULL),
+    ('Matt',        'Crocker',      11, 1),
+    ('Joe',         'Wong',          9, 1),
+    ('Jamie',       'Rodriguez',     6, NULL),
+    ('Frank',       'Smith',        10, 1),
+    ('Julia',       'Anderson',     11, 1),
+    ('George',      'Lawrence',      7, 1),
+    ('Sam',         'Palmerson',    14, 1);
     
 
 

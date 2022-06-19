@@ -1,14 +1,19 @@
 const inquirer = require('inquirer')
 const viewAll = require('../db/viewAllQueries')
 const getAll = require('../db/getAllQueries')
+const { updateEmployeeManager } = require('./updateEmployee')
+
 addEmployee = require('./addEmployee')
 addRole = require('./addRole')
 addDepartment = require('./addDepartment')
+
 updateEmployeeRole = require('./updateEmployee')
+
 
 mainMenu = () => {
     getAll.getAllEmployees()
     getAll.getAllRoles();
+    getAll.getAllMangers();
     inquirer.prompt([
     {
         type: "list",
@@ -18,6 +23,7 @@ mainMenu = () => {
             'View All Employees', 
             'Add Employee', 
             'Update Employee Role',
+            'Update Employee Manager',
             'View All Roles',
             'Add Role',
             'View All Departments',
@@ -49,6 +55,8 @@ mainMenuActions= (answers)=>{
     //Update Options
     }else if(answers.mainmenu === 'Update Employee Role'){
         updateEmployeeRole();
+    }else if(answers.mainmenu === 'Update Employee Manager'){
+        updateEmployeeManager();
     }
 }
 
