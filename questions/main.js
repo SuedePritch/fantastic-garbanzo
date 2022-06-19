@@ -1,19 +1,18 @@
 const inquirer = require('inquirer')
 const viewAll = require('../db/viewAllQueries')
 const getAll = require('../db/getAllQueries')
-const { updateEmployeeManager } = require('./updateEmployee')
+const { updateEmployeeManager, updateEmployeeRole } = require('./updateEmployee')
 
 addEmployee = require('./addEmployee')
 addRole = require('./addRole')
 addDepartment = require('./addDepartment')
-
-updateEmployeeRole = require('./updateEmployee')
 
 
 mainMenu = () => {
     getAll.getAllEmployees()
     getAll.getAllRoles();
     getAll.getAllMangers();
+    getAll.getAllDepartments();
     inquirer.prompt([
     {
         type: "list",

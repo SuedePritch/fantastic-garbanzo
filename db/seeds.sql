@@ -32,17 +32,17 @@ VALUES
     ('Sarah',       'Johnston',      2, NULL),
     ('Doug',        'Chillian',      3, NULL),
     ('Mike',        'Harris',        4, NULL),
-    ('Sally',       'Richmond',      6, NULL),
-    ('Martha',      'Jones',         5, 1),
-    ('Jim',         'Taylor',       13, 1),
-    ('Walt',        'Williams',      8, NULL),
-    ('Matt',        'Crocker',      11, 1),
-    ('Joe',         'Wong',          9, 1),
-    ('Jamie',       'Rodriguez',     6, NULL),
-    ('Frank',       'Smith',        10, 1),
-    ('Julia',       'Anderson',     11, 1),
-    ('George',      'Lawrence',      7, 1),
-    ('Sam',         'Palmerson',    14, 1);
+    ('Sally',       'Richmond',      6, 6),
+    ('Martha',      'Jones',         5, NULL),
+    ('Jim',         'Taylor',       13, 12),
+    ('Walt',        'Williams',      8, 6),
+    ('Matt',        'Crocker',      11, 12),
+    ('Joe',         'Wong',          9, 6),
+    ('Jamie',       'Rodriguez',     6, 6),
+    ('Frank',       'Smith',        10, NULL),
+    ('Julia',       'Anderson',     11, 12),
+    ('George',      'Lawrence',      7, 6),
+    ('Sam',         'Palmerson',    14, 4);
     
 
 
