@@ -20,25 +20,26 @@ viewByDepartment = () =>{
             let departmentChosen = answers.department
             let departmentIdChosen = departmentChosen[0]
             db.execute(`
-            SELECT id FROM role WHERE department_id = ${departmentIdChosen}
+            SELECT 
+                employee.first_name,
+                employee.last_name,
+                role.title,
+                department.department
+
+            FROM employee
+            LEFT JOIN role
+            ON employee.role_id = role.id
+            LEFT JOIN department
+            ON role.department_id = department.id
+            LEFT JOIN manager
+            ON employee.manager_id = manager.employeeid
+            WHERE department_id = ${departmentIdChosen}
+            ORDER BY department.id, role.salary DESC;
             `, function (err, results) {
                 if(err){
                     console.log(err);
                 }else{
-                    for (let i = 0; i < results.length; i++) {
-                        const jobTitle = results[i];
-                        console.log(jobTitle);
-                        db.execute(`
-                        SELECT CONCAT(first_name, ' ', last_name) AS Name FROM employee WHERE role_id = ${jobTitle.id}
-                        `, function (err, results) {
-                            if(err){
-                                console.log(err);
-                            }else{
-                                console.log(results);    
-                            }   
-                        }
-                        )
-                    }
+                    console.table(results)
                 }
                     mainMenu();
     })

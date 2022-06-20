@@ -43,7 +43,7 @@ generateChoicesDepartment = () =>{
     var allDepartments = allDepartmentsArray[0]
 
     for (let i = 0; i < allDepartments.length; i++) {
-        const department = `${allDepartments[i].id}${allDepartments[i].department}`;
+        const department = `${allDepartments[i].id}  ${allDepartments[i].department}`;
         departmentChoicesArray.push(department)
     }
 }
