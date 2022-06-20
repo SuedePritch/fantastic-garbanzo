@@ -3,7 +3,7 @@ const db = require('../server')
 //View All Options
 viewAllEmployees = () =>{
     db.query(`
-    SELECT 
+SELECT 
     employee.id,
     employee.first_name,
     employee.last_name,

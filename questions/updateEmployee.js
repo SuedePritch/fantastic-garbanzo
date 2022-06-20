@@ -74,7 +74,6 @@ updateEmployeeManager = () =>{
                 ]).then(answers =>{
                     let managerChosen = answers.employeeManager.split(' ')
                     let managerIdChosen = managerChosen[0]
-                    // let managerNameChosen = managerChosen.slice(1);
                     db.execute(`
                     UPDATE employee SET manager_id= '${managerIdChosen}' WHERE first_name= '${nameArrayOfChosen[0]}' AND last_name= '${nameArrayOfChosen[1]}';
                     `, function (err, results) {

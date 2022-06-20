@@ -1,6 +1,8 @@
 const inquirer = require('inquirer')
 const viewAll = require('../db/viewAllQueries')
 const getAll = require('../db/getAllQueries')
+const db = require('../server')
+const {managerChoicesArray, generateChoicesManager} = require('./choiceGenerator')
 const { 
     updateEmployeeManager, 
     updateEmployeeRole 
@@ -26,6 +28,7 @@ mainMenu = () => {
             'Add Employee', 
             'Update Employee Role',
             'Update Employee Manager',
+            'View Teams By Manager',
             'View All Roles',
             'Add Role',
             'View All Departments',
@@ -45,6 +48,8 @@ mainMenuActions= (answers)=>{
         viewAll.viewAllRoles();
     }else if(answers.mainmenu === 'View All Departments'){
         viewAll.viewAllDepartments();
+    }else if(answers.mainmenu === 'View Teams By Manager'){
+        viewByManager();
 
     //Add Options
     }else if(answers.mainmenu === 'Add Employee'){
@@ -62,5 +67,29 @@ mainMenuActions= (answers)=>{
     }
 }
 
+viewByManager = () =>{
+    generateChoicesManager();
+    inquirer.prompt([
+        {
+            type: "list",
+            name: 'manager',
+            message: 'Choose Manager to View Team',
+            choices: managerChoicesArray
+        }
+        ]).then(answers =>{
+            let managerChosen = answers.manager.split(' ')
+            let managerIdChosen = managerChosen[0]
+            db.execute(`
+            SELECT CONCAT(first_name, ' ', last_name) AS Name FROM employee WHERE manager_id = ${managerIdChosen}
+            `, function (err, results) {
+                if(err){
+                    console.log(err);
+                }else{
+                    console.table(results);    
+                }
+                mainMenu();
+            })
+    })
+}
 
 module.exports = mainMenu
