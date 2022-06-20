@@ -2,6 +2,7 @@ const getAll = require('../db/getAllQueries')
 const employeeChoicesArray = [];
 const rolesChoicesArray = [];
 const managerChoicesArray = [];
+const departmentChoicesArray = []
 
 
 
@@ -36,11 +37,23 @@ generateChoicesManager = () =>{
         managerChoicesArray.push(employee)
     }
 }
+generateChoicesDepartment = () =>{
+    var allDepartmentsArray = getAll.getAllDepartmentsArray
+    //removes array inside array
+    var allDepartments = allDepartmentsArray[0]
+
+    for (let i = 0; i < allDepartments.length; i++) {
+        const department = `${allDepartments[i].id}${allDepartments[i].department}`;
+        departmentChoicesArray.push(department)
+    }
+}
 module.exports = {
     generateChoicesEmployee,
     employeeChoicesArray,
     generateChoicesRoles,
     rolesChoicesArray,
     generateChoicesManager,
-    managerChoicesArray
+    managerChoicesArray,
+    generateChoicesDepartment,
+    departmentChoicesArray
 }
