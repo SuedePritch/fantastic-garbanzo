@@ -1,17 +1,17 @@
 INSERT INTO department (name)
 VALUES 
-    ('Design'),
-    ('Development'),
     ('Executive'), 
+    ('Development'),
+    ('Design'),
     ('Sales');
 
 
 INSERT INTO role(title, salary, department_id)
 VALUES
-    ('CEO', 8000000, 3),
-    ('CFO', 2600000, 3),
-    ('CTO', 4600000, 3),
-    ('COO', 3500000, 3),
+    ('CEO', 8000000, 1),
+    ('CFO', 2600000, 1),
+    ('CTO', 4600000, 1),
+    ('COO', 3500000, 1),
     
     ('Level 4 Developer', 215000, 2),
     ('Level 3 Developer', 145000, 2),
@@ -19,10 +19,10 @@ VALUES
     ('Level 1 Developer', 85000, 2),
     ('Intern Developer', 65000, 2),
 
-    ('Senior Designer', 86000, 1),
-    ('Mid Level Designer', 72000, 1),
-    ('Junior Designer', 65000, 1),
-    ('Intern Designer', 45000, 1),
+    ('Senior Designer', 86000, 3),
+    ('Mid Level Designer', 72000, 3),
+    ('Junior Designer', 65000, 3),
+    ('Intern Designer', 45000, 3),
 
     ('Sales', 63000, 4);
     
@@ -44,5 +44,8 @@ VALUES
     ('George',      'Lawrence',      7, 6),
     ('Sam',         'Palmerson',    14, 4);
     
-
+INSERT INTO manager(employeeid, manager_first_name, manager_last_name)
+    SELECT id, first_name, last_name
+    FROM employee
+    WHERE manager_id IS NULL;
 

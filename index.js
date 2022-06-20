@@ -1,3 +1,8 @@
 mainMenu = require('./questions/main');
 
-mainMenu();
+
+onInit = () => {
+    mainMenu();
+}
+
+onInit();

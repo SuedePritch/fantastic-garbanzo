@@ -9,14 +9,20 @@ viewAllEmployees = () =>{
     employee.last_name,
     role.title,
     role.salary,
-    department.name
+    department.name,
+    manager.manager_first_name,
+    manager.manager_last_name
+
 FROM employee
 LEFT JOIN role
 ON employee.role_id = role.id
 LEFT JOIN department
 ON role.department_id = department.id
-ORDER BY role.salary DESC;
-`, function (err, results) {
+LEFT JOIN manager
+ON employee.manager_id = manager.employeeid
+ORDER BY department.id, role.salary DESC;
+`, 
+function (err, results) {
         console.table(results);
         mainMenu();
     });
