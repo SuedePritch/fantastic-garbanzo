@@ -11,7 +11,7 @@ addDepartment = () =>{
         ]
         ).then(answers =>{
             db.execute(`
-            INSERT INTO department(name)
+            INSERT INTO department(department)
             VALUES
                 ('${answers.name}')
             `, function (err, results) {

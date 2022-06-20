@@ -9,7 +9,7 @@ viewAllEmployees = () =>{
     employee.last_name,
     role.title,
     role.salary,
-    department.name,
+    department.department,
     manager.manager_first_name,
     manager.manager_last_name
 
