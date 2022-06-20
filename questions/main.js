@@ -13,7 +13,7 @@ const {
     updateEmployeeManager, 
     updateEmployeeRole 
 } = require('./updateEmployee')
-
+budgetByDepartment = require('./budgetByDepartment')
 addEmployee = require('./addEmployee')
 addRole = require('./addRole')
 addDepartment = require('./addDepartment')
@@ -41,6 +41,7 @@ mainMenu = () => {
             'Delete Role',
             'View All Departments',
             'View Teams By Department',
+            'Budget By Department',
             'Add Department',
             'Delete Department'
         ]
@@ -86,6 +87,10 @@ mainMenuActions= (answers)=>{
         removeRole();
     }else if(answers.mainmenu === 'Delete Department'){
         removeDepartment();
+
+    //Budget Options
+    }else if(answers.mainmenu === 'Budget By Department'){
+        budgetByDepartment();
     }
 }
 
