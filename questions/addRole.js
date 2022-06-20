@@ -1,20 +1,9 @@
 const inquirer = require('inquirer');
 const db = require('../server')
-const getAll = require('../db/getAllQueries')
-const departmentChoicesArray = [];
-
-
-generateChoicesDepartment = () =>{
-    var allDepartmentsArray = getAll.getAllDepartmentsArray
-    //removes array inside array
-    var allDepartments = allDepartmentsArray[0]
-
-    for (let i = 0; i < allDepartments.length; i++) {
-        const employee = `${allDepartments[i].id} ${allDepartments[i].name}`;
-        departmentChoicesArray.push(employee)
-        console.log(departmentChoicesArray);
-    }
-}
+const {
+    generateChoicesDepartment,
+    departmentChoicesArray
+} = require('./choiceGenerator')
 
 
 addRole = () =>{

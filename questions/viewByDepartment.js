@@ -19,7 +19,7 @@ viewByDepartment = () =>{
         ]).then(answers =>{
             let departmentChosen = answers.department
             let departmentIdChosen = departmentChosen[0]
-            db.execute(`
+            db.query(`
             SELECT 
                 employee.first_name,
                 employee.last_name,
@@ -33,9 +33,9 @@ viewByDepartment = () =>{
             ON role.department_id = department.id
             LEFT JOIN manager
             ON employee.manager_id = manager.employeeid
-            WHERE department_id = ${departmentIdChosen}
+            WHERE department_id = ?
             ORDER BY department.id, role.salary DESC;
-            `, function (err, results) {
+            `,departmentIdChosen, function (err, results) {
                 if(err){
                     console.log(err);
                 }else{

@@ -36,6 +36,7 @@ CREATE TABLE manager(
     manager_last_name VARCHAR(30) NOT NULL,
     FOREIGN KEY (employeeid)
     REFERENCES employee(id)
+    ON DELETE SET NULL
 );
 
 

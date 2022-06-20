@@ -3,6 +3,12 @@ const viewAll = require('../db/viewAllQueries')
 const getAll = require('../db/getAllQueries')
 viewByManager = require('./viewByManager')
 viewByDepartments = require('./viewByDepartment')
+const {
+    removeEmployee,
+    removeRole,
+    removeDepartment 
+    
+}= require('./delete')
 const { 
     updateEmployeeManager, 
     updateEmployeeRole 
@@ -28,12 +34,15 @@ mainMenu = () => {
             'Add Employee', 
             'Update Employee Role',
             'Update Employee Manager',
+            'Delete Employee',
             'View Teams By Manager',
             'View All Roles',
             'Add Role',
+            'Delete Role',
             'View All Departments',
             'View Teams By Department',
-            'Add Department'
+            'Add Department',
+            'Delete Department'
         ]
     }
     ]
@@ -69,6 +78,14 @@ mainMenuActions= (answers)=>{
         updateEmployeeRole();
     }else if(answers.mainmenu === 'Update Employee Manager'){
         updateEmployeeManager();
+    
+    //Delete Options
+    }else if(answers.mainmenu === 'Delete Employee'){
+        removeEmployee();
+    }else if(answers.mainmenu === 'Delete Role'){
+        removeRole();
+    }else if(answers.mainmenu === 'Delete Department'){
+        removeDepartment();
     }
 }
 
