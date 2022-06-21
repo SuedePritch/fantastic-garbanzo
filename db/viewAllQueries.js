@@ -1,17 +1,16 @@
 const db = require('../server')
+const table = require('console.table')
 //Database queries
 //View All Options
 viewAllEmployees = () =>{
     db.query(`
 SELECT 
     employee.id,
-    employee.first_name,
-    employee.last_name,
+    CONCAT(employee.first_name, ' ' ,employee.last_name) AS employee,
     role.title,
     role.salary,
     department.department,
-    manager.manager_first_name,
-    manager.manager_last_name
+    CONCAT(manager.manager_first_name, ' ', manager.manager_last_name) AS manager
 
 FROM employee
 LEFT JOIN role
@@ -28,7 +27,7 @@ function (err, results) {
     });
 }
 viewAllRoles = () =>{
-    db.query('SELECT * FROM role', function (err, results) {
+    db.query('SELECT id, title, department_id, salary FROM role', function (err, results) {
         console.table(results);
         mainMenu();
     });

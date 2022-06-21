@@ -10,7 +10,7 @@ budgetByDepartment = () =>{
             db.query(`
             SELECT 
                 department.department,
-                SUM(role.salary) AS Total_Budget
+                SUM(role.salary) AS total_utilized_budget
             FROM employee
             LEFT JOIN role
             ON employee.role_id = role.id

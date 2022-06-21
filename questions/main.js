@@ -20,15 +20,16 @@ addDepartment = require('./addDepartment')
 
 
 mainMenu = () => {
-    getAll.getAllEmployees()
+    getAll.getAllEmployees();
     getAll.getAllRoles();
     getAll.getAllMangers();
     getAll.getAllDepartments();
+    console.log(`\n\n--------------------------\n-----EMPLOYEE MANAGER-----\n--------------------------\n`);
     inquirer.prompt([
     {
         type: "list",
         name: 'mainmenu',
-        message: 'Main Menu',
+        message: '-------Main Menu-------\n',
         choices:[
             'View All Employees', 
             'Add Employee', 

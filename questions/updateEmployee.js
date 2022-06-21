@@ -35,6 +35,7 @@ updateEmployeeRole = () =>{
                     let roleChosen = answers.employeeRole.split(' ')
                     let roleIdChosen = roleChosen[0]
                     let roleTitleChosen = roleChosen.slice(1);
+                    console.log(roleTitleChosen);
                     db.execute(`
                     UPDATE employee SET role_id= '${roleIdChosen}' WHERE first_name= '${nameArrayOfChosen[0]}' AND last_name= '${nameArrayOfChosen[1]}';
                     `, function (err, results) {

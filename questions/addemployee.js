@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const db = require('../server')
+const table = require('console.table')
 const {
     generateChoicesRoles, 
     rolesChoicesArray,

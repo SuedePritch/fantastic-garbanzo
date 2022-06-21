@@ -1,6 +1,7 @@
 
 const db = require('../server')
 const inquirer = require('inquirer')
+const table = require('console.table')
 const {
     departmentChoicesArray, 
     generateChoicesDepartment
@@ -21,8 +22,7 @@ viewByDepartment = () =>{
             let departmentIdChosen = departmentChosen[0]
             db.query(`
             SELECT 
-                employee.first_name,
-                employee.last_name,
+                CONCAT(employee.first_name,' ',employee.last_name) AS employee,
                 role.title,
                 department.department
 
