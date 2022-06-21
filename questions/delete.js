@@ -9,6 +9,9 @@ const {
     departmentChoicesArray
 } = require('./choiceGenerator')
 
+
+//delete functions used to remove employee, department, and roles
+//displays current options as a list
 removeEmployee = () =>{
     generateChoicesEmployee();
     inquirer.prompt([

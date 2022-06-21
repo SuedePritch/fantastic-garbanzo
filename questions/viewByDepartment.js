@@ -7,7 +7,7 @@ const {
     generateChoicesDepartment
 } = require('./choiceGenerator')
 
-
+//displays all employees belonging to that department
 viewByDepartment = () =>{
     generateChoicesDepartment();
     inquirer.prompt([

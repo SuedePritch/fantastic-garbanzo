@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const db = require('../server')
 
+//Insert new department
 addDepartment = () =>{
     inquirer.prompt([
         {

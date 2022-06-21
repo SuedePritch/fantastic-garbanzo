@@ -8,6 +8,8 @@ const {
     managerChoicesArray
 } = require('./choiceGenerator')
 
+//Inserts new employee with first_name,last_name, job title, and manager
+//roles and managers are provided as list options
 addEmployee = () =>{
     generateChoicesRoles();
     generateChoicesManager();

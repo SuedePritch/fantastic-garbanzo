@@ -2,6 +2,7 @@ const db = require('../server')
 const table = require('console.table')
 //Database queries
 //View All Options
+//Retrieves all relevant employee data from employee, role, department, and manager
 viewAllEmployees = () =>{
     db.query(`
 SELECT 
@@ -26,12 +27,15 @@ function (err, results) {
         mainMenu();
     });
 }
+
+//Retrieves all the roles data
 viewAllRoles = () =>{
     db.query('SELECT id, title, department_id, salary FROM role', function (err, results) {
         console.table(results);
         mainMenu();
     });
 }
+//Retrieves all the department data
 viewAllDepartments = () =>{
     db.query('SELECT * FROM department', function (err, results) {
         console.table(results);

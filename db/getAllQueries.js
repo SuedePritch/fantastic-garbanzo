@@ -5,6 +5,10 @@ const getAllManagersArray = [];
 const getAllDepartmentsArray = [];
 //Database queries
 //Get All Options
+//Similar to the view queries however these results are 
+//passed into an array to be used to generate question options
+//Isolated to allow future flexibility to change displayed tables 
+//independant of question arrays
 getAllEmployees = () =>{
     db.query('SELECT * FROM employee', function (err, results) {
         getAllEmployeesArray.push(results)

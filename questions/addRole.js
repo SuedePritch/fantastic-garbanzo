@@ -5,7 +5,8 @@ const {
     departmentChoicesArray
 } = require('./choiceGenerator')
 
-
+//Inserts new role with title,salary,and department
+//department is a list of current options
 addRole = () =>{
     generateChoicesDepartment();
     inquirer.prompt([

@@ -3,7 +3,7 @@ const db = require('../server')
 const inquirer = require('inquirer')
 const {managerChoicesArray, generateChoicesManager} = require('./choiceGenerator')
 
-
+//displays all employees of manager chosen
 viewByManager = () =>{
     generateChoicesManager();
     inquirer.prompt([

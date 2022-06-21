@@ -5,6 +5,7 @@ const {
 
 } = require('./choiceGenerator')
 
+//displays the sum of the salaries of each department
 budgetByDepartment = () =>{
     generateChoicesDepartment();
             db.query(`

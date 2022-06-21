@@ -4,6 +4,9 @@ const rolesChoicesArray = [];
 const managerChoicesArray = [];
 const departmentChoicesArray = []
 
+//The choice generator uses the arrays created in getAllQueries to build 
+//an array with only specific data such as first and last name
+//these arrays are used in their respective question files
 
 
 //retrieve all employees so that they can be displayed as list choices
