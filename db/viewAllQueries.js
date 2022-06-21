@@ -28,9 +28,20 @@ function (err, results) {
     });
 }
 
-//Retrieves all the roles data
+//Retrieves allthe roles data
 viewAllRoles = () =>{
-    db.query('SELECT id, title, department_id, salary FROM role', function (err, results) {
+    db.query(`
+    SELECT 
+        role.id,
+        role.title,
+        department.department,
+        role.salary
+    FROM role
+    LEFT JOIN department
+    ON role.department_id = department.id
+    
+    ORDER BY department.id;
+    `, function (err, results) {
         console.table(results);
         mainMenu();
     });

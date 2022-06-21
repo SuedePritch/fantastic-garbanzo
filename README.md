@@ -64,22 +64,22 @@ run app
 
 
 ###  View All Roles
-|id  |title               |department_id | salary   |
+|id  |title               |department    | salary   |
 |----|--------------------|--------------|----------|
-|1   |CEO                 |1             | 8000000  |
-|2   |CFO                 |1             | 2600000  |
-|3   |CTO                 |1             | 4600000  |
-|4   |COO                 |1             | 3500000  |
-|5   |Level 4 Developer   |2             | 215000   | 
-|6   |Level 3 Developer   |2             | 145000   | 
-|7   |Level 2 Developer   |2             | 105000   | 
-|8   |Level 1 Developer   |2             | 85000    | 
-|9   |Intern Developer    |2             | 65000    | 
-|10  |Senior Designer     |3             | 86000    | 
-|11  |Mid Level Designer  |3             | 72000    | 
-|12  |Junior Designer     |3             | 65000    | 
-|13  |Intern Designer     |3             | 45000    | 
-|14  |Sales               |4             | 63000    |
+|1   |CEO                 | Executive    | 8000000  |
+|2   |CFO                 | Executive    | 2600000  |
+|3   |CTO                 | Executive    | 4600000  |
+|4   |COO                 | Executive    | 3500000  |
+|5   |Level 4 Developer   | Development  | 215000   | 
+|6   |Level 3 Developer   | Development  | 145000   | 
+|7   |Level 2 Developer   | Development  | 105000   | 
+|8   |Level 1 Developer   | Development  | 85000    | 
+|9   |Intern Developer    | Development  | 65000    | 
+|10  |Senior Designer     | Design       | 86000    | 
+|11  |Mid Level Designer  | Design       | 72000    | 
+|12  |Junior Designer     | Design       | 65000    | 
+|13  |Intern Designer     | Design       | 45000    | 
+|14  |Sales               | Sales        | 63000    |
 
 
 
